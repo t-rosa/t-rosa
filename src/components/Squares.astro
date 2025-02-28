@@ -1,0 +1,48 @@
+<canvas
+  id="squares-canvas"
+  class="absolute -z-20 mix-blend-color-dodge size-full"></canvas>
+
+<script>
+  const canvas: HTMLCanvasElement | null =
+    document.querySelector("#squares-canvas");
+  if (!canvas) throw Error;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) throw Error;
+
+  const borderColor = "#3f3f46";
+  const squareSize = 40;
+  const speed = 0.01;
+
+  let gridOffset = { x: 0, y: 0 };
+
+  const resizeCanvas = () => {
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
+  };
+
+  const drawGrid = () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    const startX = Math.floor(gridOffset.x / squareSize) * squareSize;
+    const startY = Math.floor(gridOffset.y / squareSize) * squareSize;
+    for (let x = startX; x < canvas.width + squareSize; x += squareSize) {
+      for (let y = startY; y < canvas.height + squareSize; y += squareSize) {
+        const squareX = x - (gridOffset.x % squareSize);
+        const squareY = y - (gridOffset.y % squareSize);
+        ctx.strokeStyle = borderColor;
+        ctx.strokeRect(squareX, squareY, squareSize, squareSize);
+      }
+    }
+  };
+
+  const updateAnimation = () => {
+    const effectiveSpeed = Math.max(speed, 0.1);
+    gridOffset.x = (gridOffset.x - effectiveSpeed + squareSize) % squareSize;
+    gridOffset.y = (gridOffset.y - effectiveSpeed + squareSize) % squareSize;
+    drawGrid();
+    requestAnimationFrame(updateAnimation);
+  };
+
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+  requestAnimationFrame(updateAnimation);
+</script>
