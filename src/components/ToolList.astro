@@ -1,0 +1,326 @@
+---
+const tooling = {
+  regular: {
+    languages: ["HTML", "CSS", "JavaScript", "TypeScript", "C#", "SQL"],
+    frameworks: ["React", "Tailwind CSS", "ASP.NET Core"],
+    libraries: [
+      "TanStack",
+      "React Hook Form",
+      "Zod",
+      "FluentValidation",
+      "OpenLayers",
+    ],
+    ui: ["Ark-ui", "Radix-ui", "Headless UI", "React Aria", "Shadcn/ui"],
+    databases: ["PostgreSQL"],
+    tests: ["Vitest", "Playwright", "XUnit", "Testcontainers"],
+    tools: ["Vite", "Git", "Github", "Docker", "Vim", "VS Code", "Terminal"],
+  },
+  occasional: {
+    languages: ["Go", "Lua", "Python", "Java", "C++"],
+    frameworks: [
+      "Astro",
+      "Next.js",
+      "Angular",
+      "SolidJS",
+      "Blazor",
+      "PandaCSS",
+    ],
+    libraries: [
+      "XState",
+      "RxJS",
+      "Redux",
+      "Zustand",
+      "Maplibre",
+      "Mapbox",
+      "Sanity",
+    ],
+    ui: ["Chakra UI", "ParkUI", "RizzUI", "Justd"],
+    databases: ["SQL Server", "SQLite", "MongoDB"],
+    tests: ["Jest", "Cypress"],
+    tools: ["Rolldown", "RSPack", "NeoVim", "Visual Studio", "Figma"],
+  },
+};
+---
+
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-3">
+  {
+    tooling.regular.languages.length && (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-red-800 border-zinc-700/75 text-zinc-100 text-xs">
+          Régulier
+        </p>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">Langages</h2>
+        </div>
+        <ul class="list-disc pl-6">
+          {tooling.regular.languages.map((tool) => (
+            <li>
+              <p class="text-zinc-400">{tool}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    tooling.regular.frameworks.length && (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-red-800 border-zinc-700/75 text-zinc-100 text-xs">
+          Régulier
+        </p>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">Frameworks</h2>
+        </div>
+        <ul class="list-disc pl-6">
+          {tooling.regular.frameworks.map((tool) => (
+            <li>
+              <p class="text-zinc-400">{tool}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    tooling.regular.libraries.length && (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-red-800 border-zinc-700/75 text-zinc-100 text-xs">
+          Régulier
+        </p>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">Librairies</h2>
+        </div>
+        <ul class="list-disc pl-6">
+          {tooling.regular.libraries.map((tool) => (
+            <li>
+              <p class="text-zinc-400">{tool}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    tooling.regular.databases.length && (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-red-800 border-zinc-700/75 text-zinc-100 text-xs">
+          Régulier
+        </p>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">Bases de données</h2>
+        </div>
+        <ul class="list-disc pl-6">
+          {tooling.regular.databases.map((tool) => (
+            <li>
+              <p class="text-zinc-400">{tool}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    tooling.regular.tests.length && (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-red-800 border-zinc-700/75 text-zinc-100 text-xs">
+          Régulier
+        </p>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">Tests</h2>
+        </div>
+        <ul class="list-disc pl-6">
+          {tooling.regular.tests.map((tool) => (
+            <li>
+              <p class="text-zinc-400">{tool}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    tooling.regular.tools.length && (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-red-800 border-zinc-700/75 text-zinc-100 text-xs">
+          Régulier
+        </p>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">Outils</h2>
+        </div>
+        <ul class="list-disc pl-6">
+          {tooling.regular.tools.map((tool) => (
+            <li>
+              <p class="text-zinc-400">{tool}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    tooling.regular.ui.length && (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-red-800 border-zinc-700/75 text-zinc-100 text-xs">
+          Régulier
+        </p>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">UI</h2>
+        </div>
+        <ul class="list-disc pl-6">
+          {tooling.regular.ui.map((tool) => (
+            <li>
+              <p class="text-zinc-400">{tool}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    tooling.occasional.languages.length && (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-emerald-800 border-zinc-700/75 text-zinc-100 text-xs">
+          Occasionel
+        </p>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">Languages</h2>
+        </div>
+        <ul class="list-disc pl-6">
+          {tooling.occasional.languages.map((tool) => (
+            <li>
+              <p class="text-zinc-400">{tool}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    tooling.occasional.frameworks.length && (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-emerald-800 border-zinc-700/75 text-zinc-100 text-xs">
+          Occasionel
+        </p>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">Frameworks</h2>
+        </div>
+        <ul class="list-disc pl-6">
+          {tooling.occasional.frameworks.map((tool) => (
+            <li>
+              <p class="text-zinc-400">{tool}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    tooling.occasional.libraries.length && (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-emerald-800 border-zinc-700/75 text-zinc-100 text-xs">
+          Occasionel
+        </p>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">Librairies</h2>
+        </div>
+        <ul class="list-disc pl-6">
+          {tooling.occasional.libraries.map((tool) => (
+            <li>
+              <p class="text-zinc-400">{tool}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    tooling.occasional.databases.length && (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-emerald-800 border-zinc-700/75 text-zinc-100 text-xs">
+          Occasionel
+        </p>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">Base de données</h2>
+        </div>
+        <ul class="list-disc pl-6">
+          {tooling.occasional.databases.map((tool) => (
+            <li>
+              <p class="text-zinc-400">{tool}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    tooling.occasional.tests.length && (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-emerald-800 border-zinc-700/75 text-zinc-100 text-xs">
+          Occasionel
+        </p>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">Tests</h2>
+        </div>
+        <ul class="list-disc pl-6">
+          {tooling.occasional.tests.map((tool) => (
+            <li>
+              <p class="text-zinc-400">{tool}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    tooling.occasional.tools.length && (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-emerald-800 border-zinc-700/75 text-zinc-100 text-xs">
+          Occasionel
+        </p>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">Outis</h2>
+        </div>
+        <ul class="list-disc pl-6">
+          {tooling.occasional.tools.map((tool) => (
+            <li>
+              <p class="text-zinc-400">{tool}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+  {
+    tooling.occasional.ui.length && (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-emerald-800 border-zinc-700/75 text-zinc-100 text-xs">
+          Occasionel
+        </p>
+
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">UI</h2>
+        </div>
+        <ul class="list-disc pl-6">
+          {tooling.occasional.ui.map((tool) => (
+            <li>
+              <p class="text-zinc-400">{tool}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+</div>
