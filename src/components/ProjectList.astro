@@ -1,0 +1,176 @@
+---
+import LinkIcon from "../assets/icons/line-md--link.svg";
+import GithubIcon from "../assets/icons/simple-icons--github.svg";
+
+interface IProject {
+  title: string;
+  tools: string;
+  description: string;
+  githubUrl?: string;
+  websiteUrl?: string;
+  status?: "pro" | "perso" | "open-source";
+  company?: string;
+  wip?: boolean;
+}
+
+const projects: IProject[] = [
+  {
+    title: "Editeur cartographique",
+    tools:
+      "PostgreSQL, Postgis, ASP Net Core, React, Typescript, TailwindCSS, TanStack Router, OpenLayers",
+    description:
+      "Editeur de carte en ligne. Création, édition et visualisation de cartes publique et privée, je peux vous faire une démonstration sur demande.",
+    // websiteUrl: "https://app.astradal.com/",
+    status: "pro",
+    company: "Astradal",
+    wip: true,
+  },
+  {
+    title: "Geostack",
+    tools:
+      "PostgreSQL, Postgis, ASP Net Core, React, Typescript, TailwindCSS, TanStack Router, OpenLayers",
+    description:
+      "Application de gestion de données géographiques, avec divers outils de personnalisation de cartes mais aussi d'objets géographiques et de métiers associés.",
+    status: "perso",
+    wip: true,
+  },
+  {
+    title: "Jane Do Agency",
+    tools: "Next.js, React, TypeScript, TailwindCSS, Sanity",
+    description:
+      "Site vitrine pour l'agence musicale Jane Do Agency. Présentation des services, informations, prise de contact.",
+    websiteUrl: "https://www-janedoagency-com.vercel.app/",
+    githubUrl: "https://github.com/t-rosa/www.janedoagency.com",
+    status: "perso",
+  },
+  {
+    title: "Tanstack Form",
+    tools: "Typescript",
+    description:
+      "Contribution open source à la librairie TanStack Form. Ajout de fonctionnalités concernant la validation et la gestion des champs de type 'array'.",
+    websiteUrl: "https://tanstack.com/form/latest",
+    githubUrl:
+      "https://github.com/TanStack/form/pulls?q=is%3Apr+author%3At-rosa+",
+    status: "open-source",
+  },
+  {
+    title: "Ark Stack UI",
+    tools: "React, Typescript, TailwindCSS, Ark-ui",
+    description:
+      "Implémentation d'une librairie de composants UI autour des composants de la librairie Ark-ui avec React, TypeScript et TailwindCSS.",
+    githubUrl: "https://github.com/t-rosa/ark-stack-ui",
+    status: "perso",
+    wip: true,
+  },
+  {
+    title: "Portfolio",
+    tools: "React, Typescript, TailwindCSS, TanStack Router",
+    description:
+      "Site vitrine personnel. Présentation de mes projets, compétences et informations de contact.",
+    githubUrl: "https://github.com/t-rosa/portfolio",
+    status: "perso",
+  },
+  {
+    title: "Better League Client",
+    tools: "Astro, TailwindCSS",
+    description:
+      "Ma conception du client de League of legends s'il devait être refait. C'est mon terrain de jeu pour faire des animations et du CSS.",
+    githubUrl: "https://github.com/t-rosa/better-league-client",
+    websiteUrl: "https://better-league-client.vercel.app/",
+    status: "perso",
+    wip: true,
+  },
+  {
+    title: "Maison de la mascotte",
+    tools: "Astro, TailwindCSS",
+    description:
+      "Site vitrine pour une maison d'hôtes. Présentation de la maison, services et informations de contact.",
+    githubUrl: "https://github.com/t-rosa/www.maisondelamascotte.com",
+    websiteUrl: "https://www.maisondelamascotte.com/",
+    status: "pro",
+  },
+  {
+    title: "Abalone",
+    tools: "C++, Raylib",
+    description:
+      "Implémentation du jeu de plateau Abalone en C++ avec la librairie Raylib.",
+    githubUrl: "https://github.com/t-rosa/ABALONE",
+    status: "perso",
+    wip: true,
+  },
+  {
+    title: "Tetris",
+    tools: "C++, Raylib",
+    description:
+      "Implémentation du jeu Tetris en C++ avec la librairie Raylib.",
+    githubUrl: "https://github.com/t-rosa/TETRIS",
+    status: "perso",
+    wip: true,
+  },
+];
+---
+
+<div class="grid md:grid-cols-2 gap-6 mt-3">
+  {
+    projects.map((project) => (
+      <div class="relative border rounded-xl border-zinc-700/75 bg-zinc-900/55 p-3 lg:p-6 space-y-3 grid grid-rows-[auto_1fr_auto] gap-3">
+        {project.wip && (
+          <p
+            title="Work In Progress"
+            class="absolute z-10 -top-2 left-5 border px-3 rounded-xl bg-zinc-800 border-zinc-700/75 text-zinc-100 text-xs"
+          >
+            WIP
+          </p>
+        )}
+        {project.status === "pro" && (
+          <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-red-800 border-zinc-700/75 text-zinc-100 text-xs">
+            Pro {project.company && <span>- {project.company}</span>}
+          </p>
+        )}
+        {project.status === "perso" && (
+          <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-indigo-800 border-zinc-700/75 text-zinc-100 text-xs">
+            Perso
+          </p>
+        )}
+        {project.status === "open-source" && (
+          <p class="absolute z-10 -top-2 right-5 border px-3 rounded-xl bg-emerald-800 border-zinc-700/75 text-zinc-100 text-xs">
+            Open Source
+          </p>
+        )}
+        <div class="space-y-1">
+          <h2 class="text-xl font-semibold">{project.title}</h2>
+          <p class="text-zinc-400">{project.tools}</p>
+        </div>
+        <p class="text-zinc-300">{project.description}</p>
+        <ul class="flex items-center gap-3">
+          {project.githubUrl && (
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={project.githubUrl}
+                class="flex gap-1 items-center text-sm text-indigo-400/75 "
+              >
+                <GithubIcon class="size-4" />
+                Github
+              </a>
+            </li>
+          )}
+          {project.websiteUrl && (
+            <li>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={project.websiteUrl}
+                class="flex gap-1 items-center text-sm text-indigo-400/75 "
+              >
+                <LinkIcon class="size-4" />
+                Website
+              </a>
+            </li>
+          )}
+        </ul>
+      </div>
+    ))
+  }
+</div>
