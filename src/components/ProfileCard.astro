@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+import Avatar from "../assets/avatar.jpg";
+import LinkedinIcon from "../assets/icons/devicon--linkedin.svg";
+import MailIcon from "../assets/icons/lets-icons--e-mail-light.svg";
+import BlueskyIcon from "../assets/icons/logos--bluesky.svg";
+import GithubIcon from "../assets/icons/simple-icons--github.svg";
+---
+
+<section
+  class="border rounded-xl border-zinc-700/75 bg-zinc-900/35 p-3 lg:p-6 grid gap-3"
+>
+  <Image
+    src={Avatar}
+    alt="Toma Rosa"
+    class="rounded-full size-25 border border-zinc-700/75"
+  />
+  <h1 class="text-2xl text-indigo-200 font-semibold">Toma ROSA</h1>
+  <p class="text-zinc-300 text-lg">
+    Ingénieur logiciel, spécialisé dans le web.
+  </p>
+  <p class="text-zinc-400 max-w-xs">
+    Si vous avez des questions, n&apos;hésitez pas à me contacter via mes
+    réseaux.
+  </p>
+  <ul class="flex items-center gap-6 py-1.5">
+    <li class="duration-200 hover:scale-115">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://github.com/t-rosa"
+        title="t-rosa"
+      >
+        <GithubIcon class="size-10" />
+      </a>
+    </li>
+    <li class="duration-200 hover:scale-115">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/toma-rosa/"
+        title="toma-rosa"
+      >
+        <LinkedinIcon class="size-10" />
+      </a>
+    </li>
+    <li class="duration-200 hover:scale-115">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://bsky.app/profile/t-rosa.com"
+        title="@t-rosa.com"
+      >
+        <BlueskyIcon class="size-10" />
+      </a>
+    </li>
+    <li class="duration-200 hover:scale-115">
+      <a
+        rel="noopener noreferrer"
+        href="mailto:toma.rosa@ik.me"
+        title="toma.rosa@ik.me"
+      >
+        <MailIcon class="size-10" />
+      </a>
+    </li>
+  </ul>
+</section>
